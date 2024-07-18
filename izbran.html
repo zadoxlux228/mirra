@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Избранное - MIRRA</title>
+    <style>
+        body {
+            background: linear-gradient(rgba(128, 128, 128, 1), rgba(192, 192, 192, 1));
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            font-family: Courier New, monospace;
+            padding: 20px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            background: linear-gradient(rgba(128, 128, 128, 1), rgba(192, 192, 192, 1));
+            color: white;
+            font-size: 1.5em;
+        }
+        .mirra-title {
+            color: black;
+            font-family: 'Brush Script MT', 'Brush Script Std', cursive;
+            font-size: medium;
+            margin-right: 10px;
+        }
+        .top-menu {
+            display: flex;
+            align-items: center;
+        }
+        .top-menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .top-menu li {
+            margin-right: 10px;
+        }
+        .top-menu li a {
+            color: black;
+            text-decoration: none;
+            font-family: Courier New, monospace;
+            font-size: small;
+            padding: 5px 10px;
+        }
+        .favorites {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .favorites-item {
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+        }
+        .favorites-item:last-child {
+            border-bottom: none;
+        }
+        .favorites-item h3 {
+            font-size: 1.2em;
+            margin: 0;
+        }
+        .favorites-item p {
+            font-size: 0.9em;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <span class="mirra-title">MIRRA</span>
+        <nav class="top-menu">
+            <ul>
+                <li><a href="sssss.html">Главная</a></li>
+                <li><a href="katalog.html">Каталог</a></li>
+                <li><a href="kontakti.html">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="favorites" id="favorites">
+
+    </div>
+
+    <script>
+        function loadFavorites() {
+            let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+            let favoritesContainer = document.getElementById('favorites');
+            if (favorites.length === 0) {
+                favoritesContainer.innerHTML = '<p>Ваши избранные товары отсутствуют.</p>';
+            } else {
+                favoritesContainer.innerHTML = '';
+                favorites.forEach(item => {
+                    let itemElement = document.createElement('div');
+                    itemElement.className = 'favorites-item';
+                    itemElement.innerHTML = '<h3>' + item;
+                    favoritesContainer.appendChild(itemElement);
+                });
+            }
+        }
+
+        window.onload = loadFavorites;
+    </script>
+</body>
+</html>

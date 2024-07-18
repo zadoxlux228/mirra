@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="manifest" href="../manifest.json">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>МИРРА</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #333, #ccc);
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .top-links {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+        .top-links a {
+            display: inline-block;
+            margin-left: 10px;
+        }
+        .top-links img {
+            width: 20px;
+            height: 20px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0 10px;
+        }
+        .top-menu {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+        }
+        .top-menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        .top-menu li {
+            display: inline;
+        }
+        .top-menu a {
+            color: black;
+            text-decoration: none;
+            font-family: Courier New, monospace;
+            font-size: small;
+            padding: 0 10px;
+        }
+        .search-form {
+            display: none;
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        header img {
+            width: 100%;
+            height: auto;
+        }
+        main {
+            margin-left: 180px;
+            margin-top: 40px;
+            max-width: 800px;
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .mirra-title {
+            font-family: 'Brush Script MT', 'Brush Script Std', cursive;
+            font-size: medium;
+            color: black;
+            margin-right: 10px;
+        }
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 3px;
+        }
+        .about-us {
+            margin: 40px auto;
+            max-width: 750px;
+            padding: 50px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .about-us h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .about-us p {
+            text-align: justify;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+</head>
+<body>
+    <header>
+        <div class="top-links">
+            <a href="korzina.html"><img src="korzina.png" alt="Корзина"></a>
+            <a href="izbran.html"><img src="izbran.png" alt="Избранное"></a>
+        </div>
+        <div class="search-form" id="search-form">
+            <input type="text" class="search-input" placeholder="Поиск по каталогу">
+            <button class="search-button">Поиск</button>
+        </div>
+    </header>
+
+    <nav class="top-menu">
+        <ul>
+            <li><span class="mirra-title">MIRRA</span></li>
+            <li><a href="sssss.html">Главная</a></li>
+            <li><a href="katalog.html">Каталог</a></li>
+            <li><a href="kontakti.html">Контакты</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="carousel">
+            <div class="slick-carousel">
+                <div><img src="image.png" alt="Изображение 1"></div>
+                <div><img src="upakov.png" alt="Изображение 2"></div>
+                <div><img src="svechi.png" alt="Изображение 3"></div>
+                <div><img src="echo.png" alt="Изображение 4"></div>
+                <!-- Добавьте больше изображений по мере необходимости -->
+            </div>
+        </section>
+
+        <nav class="top-menu">
+            <ul>
+                <li><span class="mirra-title">MIRRA</span></li>
+                <li><a href="sssss.html">Главная</a></li>
+                <li><a href="katalog.html">Каталог</a></li>
+                <li><a href="kontakti.html">Контакты</a></li>
+            </ul>
+        </nav>
+
+        <section class="about-us">
+            <h2>О нас</h2>
+            <p>Добро пожаловать в магазин ароматических свечей МИРРА! Наш магазин был основан в 2020 году с целью привнести в каждый дом уют и гармонию через магию ароматов. Наша команда состоит из энтузиастов, увлеченных созданием уникальных ароматов, которые способны преобразить любое пространство.</p>
+            <p>История нашего магазина началась с маленькой мастерской, где мы экспериментировали с различными ингредиентами и создавали первые образцы свечей. С годами мы выросли и превратились в любимый бренд среди любителей ароматерапии, предлагая широкий ассортимент свечей, изготовленных из натуральных компонентов.</p>
+            <p>Наш слоган: "МИРРА - источник уюта и гармонии". Мы верим, что каждая свеча, зажженная в вашем доме, приносит с собой частичку тепла и спокойствия, создавая идеальную атмосферу для отдыха и релаксации.</p>
+        </section>
+    </main>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.slick-carousel').slick({
+                dots: true,
+                infinite: true,
+                speed: 500,
+                fade: true,
+                cssEase: 'linear',
+                autoplay: true,
+                autoplaySpeed: 2000
+            });
+        });
+    </script>
+<script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js',{scope: '/'});
+    }
+</script>
+</body>
+</html>

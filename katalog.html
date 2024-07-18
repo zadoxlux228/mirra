@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог свечей</title>
+    <style>
+        body {
+            background: linear-gradient(rgba(128, 128, 128, 1), rgba(192, 192, 192, 1));
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            font-family: Courier New, monospace;
+            padding: 20px;
+            text-align: center;
+            background: linear-gradient(rgba(128, 128, 128, 1), rgba(192, 192, 192, 1));
+            color: white;
+            font-size: 1.5em;
+            position: relative;
+        }
+        .top-links {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+        .top-links a {
+            display: inline-block;
+            margin-left: 10px;
+        }
+        .top-links img {
+            width: 20px;
+            height: 20px;
+        }
+        nav {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: black; /* Цвет текста черный */
+            text-decoration: none;
+            font-size: small; /* Размер текста small */
+            font-family: Courier New, monospace; /* Шрифт Courier New, monospace */
+        }
+        .catalog {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        .catalog-item {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            padding: 20px;
+            width: 200px;
+            text-align: center;
+        }
+        .catalog-item img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        .catalog-item h3 {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        .catalog-item p {
+            font-size: 0.9em;
+            color: #666;
+        }
+        .catalog-item .buttons {
+            margin-top: 10px;
+        }
+        .catalog-item button {
+            background-color: #000000;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+        .catalog-item button:hover {
+            background-color: #000000;
+        }
+        .mirra-title {
+            font-family: 'Brush Script MT', 'Brush Script Std', cursive;
+            font-size: medium;
+            color: black;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="top-links">
+            <a href="korzina.html"><img src="korzina.png" alt="Корзина"></a>
+            <a href="izbran.html"><img src="izbran.png" alt="Избранное"></a>
+        </div>
+        Каталог ароматических свечей
+    </header>
+
+    <div class="catalog">
+        <div class="catalog-item">
+            <img src="sv1.PNG" alt="Свеча Роза">
+            <h3>Свеча Роза</h3>
+            <p>Нежная свеча с запахом розы для романтической атмосферы.</p>
+            <div class="buttons">
+                <button onclick="addToCart('Свеча Роза')">В корзину</button>
+                <button onclick="addToFavorites('Свеча Роза')">В избранное</button>
+            </div>
+        </div>
+        <div class="catalog-item">
+            <img src="sv2.PNG" alt="Свеча Лаванда">
+            <h3>Свеча Лаванда</h3>
+            <p>Расслабляющая свеча с ароматом лаванды для спокойного вечера.</p>
+            <div class="buttons">
+                <button onclick="addToCart('Свеча Лаванда')">В корзину</button>
+                <button onclick="addToFavorites('Свеча Лаванда')">В избранное</button>
+            </div>
+        </div>
+        <div class="catalog-item">
+            <img src="sv3.PNG" alt="Свеча Ваниль">
+            <h3>Свеча Ваниль</h3>
+            <p>Теплая и уютная свеча с нежным ванильным ароматом.</p>
+            <div class="buttons">
+                <button onclick="addToCart('Свеча Ваниль')">В корзину</button>
+                <button onclick="addToFavorites('Свеча Ваниль')">В избранное</button>
+            </div>
+        </div>
+        <div class="catalog-item">
+            <img src="sv4.PNG" alt="Свеча Лимон">
+            <h3>Свеча Лимон</h3>
+            <p>Свежая свеча с бодрящим ароматом лимона для энергичного начала дня.</p>
+            <div class="buttons">
+                <button onclick="addToCart('Свеча Лимон')">В корзину</button>
+                <button onclick="addToFavorites('Свеча Лимон')">В избранное</button>
+            </div>
+        </div>
+        <!-- Добавьте больше свечей по мере необходимости -->
+    </div>
+
+    <nav class="top-menu">
+        <ul>
+            <li><span class="mirra-title">MIRRA</li>
+            <li><a href="sssss.html">Главная</a></li>
+            <li><a href="katalog.html">Каталог</a></li>
+            <li><a href="kontakti.html">Контакты</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        function addToCart(item) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push(item);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(item + ' добавлена в корзину!');
+        }
+
+        function addToFavorites(item) {
+            let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+            favorites.push(item);
+            localStorage.setItem('favorites', JSON.stringify(favorites));
+            alert(item + ' добавлена в избранное!');
+        }
+    </script>
+</body>
+</html>
